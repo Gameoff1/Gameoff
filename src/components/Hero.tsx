@@ -22,7 +22,7 @@ export default function Hero() {
   };
 
   return (
-    <div className="relative min-h-[90vh] flex items-center pt-20 overflow-hidden">
+    <div className="relative min-h-screen flex items-center pt-24 overflow-hidden">
       {/* Background Image with Overlay */}
       <motion.div 
         initial={{ scale: 1.1 }}
@@ -47,7 +47,7 @@ export default function Hero() {
             initial="hidden"
             animate="visible"
           >
-            <motion.h1 variants={itemVariants} className="text-5xl md:text-6xl lg:text-7xl font-serif font-bold text-white leading-tight mb-6">
+            <motion.h1 variants={itemVariants} className="text-[6400rem] md:text-[12800rem] lg:text-[19200rem] font-serif font-bold text-white leading-tight mb-[6400rem]">
               Tradição e <span className="text-brand-green">Qualidade</span> em Gouveia
             </motion.h1>
             

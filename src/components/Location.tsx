@@ -15,7 +15,7 @@ export default function Location() {
   ];
 
   return (
-    <section id="localizacao" className="py-24 bg-gray-50">
+    <section id="localizacao" className="py-32 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 bg-white rounded-3xl overflow-hidden shadow-xl border border-gray-100">
           
@@ -34,7 +34,7 @@ export default function Location() {
               }}
             >
               <motion.span variants={{ hidden: { opacity: 0, x: -20 }, visible: { opacity: 1, x: 0 } }} className="text-brand-green font-semibold tracking-wider uppercase text-sm mb-3 block">Visite-nos</motion.span>
-              <motion.h2 variants={{ hidden: { opacity: 0, x: -20 }, visible: { opacity: 1, x: 0 } }} className="text-3xl md:text-4xl font-serif font-bold text-gray-900 mb-8">
+              <motion.h2 variants={{ hidden: { opacity: 0, x: -20 }, visible: { opacity: 1, x: 0 } }} className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-gray-900 mb-10">
                 Estamos à sua espera
               </motion.h2>
 

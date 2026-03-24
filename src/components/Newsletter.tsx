@@ -3,7 +3,7 @@ import { Mail, FileText, Camera, Bell } from 'lucide-react';
 
 export default function Newsletter() {
   return (
-    <section className="py-24 bg-brand-green-dark relative overflow-hidden">
+    <section className="py-32 bg-brand-green-dark relative overflow-hidden">
       {/* Decorative background elements */}
       <div className="absolute top-0 right-0 -mt-20 -mr-20 w-80 h-80 bg-brand-green rounded-full blur-3xl opacity-50"></div>
       <div className="absolute bottom-0 left-0 -mb-20 -ml-20 w-80 h-80 bg-brand-yellow/20 rounded-full blur-3xl opacity-50"></div>
@@ -18,24 +18,24 @@ export default function Newsletter() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <h2 className="text-3xl md:text-4xl font-serif font-bold text-white mb-6">
+              <h2 className="text-5xl md:text-6xl font-serif font-bold text-white mb-8">
                 Junte-se à nossa comunidade
               </h2>
-              <p className="text-emerald-50 text-lg mb-8 leading-relaxed">
+              <p className="text-emerald-50 text-xl mb-8 leading-relaxed">
                 Recebe novidades, folhetos digitais e conteúdos exclusivos em primeira mão.
               </p>
 
-              <div className="space-y-4">
-                <div className="flex items-center gap-3 text-emerald-100">
-                  <FileText size={20} className="text-brand-yellow" />
+              <div className="space-y-6">
+                <div className="flex items-center gap-4 text-emerald-100 text-lg">
+                  <FileText size={24} className="text-brand-yellow" />
                   <span>Folhetos digitais semanais</span>
                 </div>
-                <div className="flex items-center gap-3 text-emerald-100">
-                  <Camera size={20} className="text-brand-yellow" />
+                <div className="flex items-center gap-4 text-emerald-100 text-lg">
+                  <Camera size={24} className="text-brand-yellow" />
                   <span>Fotografias de produtos frescos</span>
                 </div>
-                <div className="flex items-center gap-3 text-emerald-100">
-                  <Bell size={20} className="text-brand-yellow" />
+                <div className="flex items-center gap-4 text-emerald-100 text-lg">
+                  <Bell size={24} className="text-brand-yellow" />
                   <span>Atualizações da loja em tempo real</span>
                 </div>
               </div>

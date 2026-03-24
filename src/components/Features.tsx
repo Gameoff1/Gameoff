@@ -20,17 +20,17 @@ const commitments = [
 
 export default function Features() {
   return (
-    <section className="py-24 bg-white">
+    <section className="py-32 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row gap-8 md:gap-16 items-end mb-16">
           <div className="md:w-1/2">
             <h2 className="text-brand-green font-semibold tracking-wider uppercase text-sm mb-3">O Nosso Compromisso</h2>
-            <h3 className="text-4xl md:text-5xl font-serif font-bold text-gray-900 leading-tight">
+            <h3 className="text-5xl md:text-6xl lg:text-7xl font-serif font-bold text-gray-900 leading-tight">
               O melhor para a sua <span className="italic text-brand-green">casa</span>
             </h3>
           </div>
           <div className="md:w-1/2 pb-2">
-            <p className="text-gray-600 text-lg leading-relaxed">
+            <p className="text-gray-600 text-xl leading-relaxed">
               Não somos apenas um local de passagem. Somos o ponto de encontro entre os melhores produtos e a sua família. Descubra o que nos torna únicos em Gouveia.
             </p>
           </div>
@@ -55,8 +55,8 @@ export default function Features() {
                   referrerPolicy="no-referrer"
                 />
               </div>
-              <h4 className="text-2xl font-serif font-bold text-gray-900 mb-4 group-hover:text-brand-green transition-colors">{item.title}</h4>
-              <p className="text-gray-600 leading-relaxed">{item.desc}</p>
+              <h4 className="text-3xl font-serif font-bold text-gray-900 mb-4 group-hover:text-brand-green transition-colors">{item.title}</h4>
+              <p className="text-gray-600 text-lg leading-relaxed">{item.desc}</p>
             </motion.div>
           ))}
         </div>

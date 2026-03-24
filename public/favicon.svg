@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!-- Basket Handle -->
+  <path d="M110 260 C 110 50, 402 50, 402 260" stroke="#059669" stroke-width="35" fill="none" stroke-linecap="round" />
+  
+  <!-- Apple (Left) -->
+  <g transform="translate(165, 250)">
+    <path d="M-65 0 C -65 -55, 65 -55, 65 0 C 65 55, -65 55, -65 0" fill="#f97316" />
+    <path d="M-15 -45 C -45 -80, -65 -55, -65 -55" fill="#059669" />
+    <path d="M15 -45 C 45 -80, 65 -55, 65 -55" fill="#059669" />
+  </g>
+  
+  <!-- Corn (Middle) -->
+  <g transform="translate(265, 220)">
+    <path d="M-35 0 C -35 -65, 35 -65, 35 0 C 35 65, -35 65, -35 0" fill="#fbbf24" />
+    <path d="M-40 45 C -55 -15, -25 -30, -25 -30" fill="#059669" />
+    <path d="M40 45 C 55 -15, 25 -30, 25 -30" fill="#059669" />
+  </g>
+  
+  <!-- Cactus (Right) -->
+  <g transform="translate(365, 235)">
+    <path d="M-20 55 V -30 C -20 -50, 20 -50, 20 -30 V 55" fill="#059669" />
+    <path d="M-20 15 H -35 C -45 15, -45 -5, -35 -5 V -15" fill="#059669" />
+    <path d="M20 5 H 35 C 45 5, 45 -15, 35 -15 V -25" fill="#059669" />
+  </g>
+  
+  <!-- Basket Body -->
+  <path d="M90 260 H 422 V 340 C 422 440, 372 470, 256 470 C 140 470, 90 440, 90 340 Z" fill="#059669" />
+  
+  <!-- Basket Slots -->
+  <rect x="135" y="310" width="25" height="110" rx="12" fill="white" fill-opacity="0.4" />
+  <rect x="192" y="310" width="25" height="110" rx="12" fill="white" fill-opacity="0.4" />
+  <rect x="250" y="310" width="25" height="110" rx="12" fill="white" fill-opacity="0.4" />
+  <rect x="307" y="310" width="25" height="110" rx="12" fill="white" fill-opacity="0.4" />
+  <rect x="365" y="310" width="25" height="110" rx="12" fill="white" fill-opacity="0.4" />
+</svg>

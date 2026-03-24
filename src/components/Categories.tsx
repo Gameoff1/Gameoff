@@ -53,14 +53,14 @@ const categories = [
 
 export default function Categories() {
   return (
-    <section id="produtos" className="py-24 bg-gray-50">
+    <section id="produtos" className="py-32 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-brand-green font-semibold tracking-wider uppercase text-sm mb-3">Nossos Produtos</h2>
-          <h3 className="text-3xl md:text-4xl font-serif font-bold text-gray-900 mb-4">
+          <h3 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-gray-900 mb-4">
             Qualidade e Variedade
           </h3>
-          <p className="text-gray-600 text-lg">
+          <p className="text-gray-600 text-xl">
             Selecionamos os melhores produtos para a sua mesa. Descubra as nossas secções e encontre tudo o que precisa.
           </p>
         </div>
@@ -105,8 +105,8 @@ export default function Categories() {
                   <span className={`inline-block px-3 py-1 rounded-full text-xs font-semibold mb-3 ${category.color}`}>
                     {category.name}
                   </span>
-                  <h4 className="text-xl font-bold text-gray-900 mb-2">{category.name}</h4>
-                  <p className="text-gray-600 mb-4">{category.desc}</p>
+                  <h4 className="text-2xl font-bold text-gray-900 mb-3">{category.name}</h4>
+                  <p className="text-gray-600 text-lg mb-4">{category.desc}</p>
                 </div>
                 
                 <div className="mt-auto pt-4 border-t border-gray-100">

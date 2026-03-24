@@ -21,19 +21,19 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="bg-gray-900 text-white pt-20 pb-10">
+    <footer className="bg-gray-900 text-white pt-32 pb-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
           
           {/* Brand */}
           <div className="col-span-1">
-            <div className="mb-8">
+            <div className="mb-10 scale-125 origin-left">
               <Logo className="[&_span]:text-white [&_span>span]:text-brand-green" />
             </div>
-            <p className="text-gray-400 text-sm leading-relaxed max-w-xs mb-6">
+            <p className="text-gray-400 text-base leading-relaxed max-w-sm mb-6">
               O seu supermercado de confiança na Zona Industrial de Gouveia. Produtos frescos todos os dias, com atendimento de proximidade.
             </p>
-            <div className="flex items-center gap-3 text-gray-400 text-sm group">
+            <div className="flex items-center gap-3 text-gray-400 text-base group">
               <div className="p-2 bg-gray-800 rounded-lg group-hover:bg-brand-green transition-colors">
                 <Mail size={16} className="text-gray-300 group-hover:text-white transition-colors" />
               </div>
