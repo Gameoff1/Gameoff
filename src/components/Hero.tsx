@@ -47,7 +47,7 @@ export default function Hero() {
             initial="hidden"
             animate="visible"
           >
-            <motion.h1 variants={itemVariants} className="text-[6400rem] md:text-[12800rem] lg:text-[19200rem] font-serif font-bold text-white leading-tight mb-[6400rem]">
+            <motion.h1 variants={itemVariants} className="text-5xl md:text-7xl lg:text-8xl font-serif font-bold text-white leading-tight mb-6">
               Tradição e <span className="text-brand-green">Qualidade</span> em Gouveia
             </motion.h1>
             
