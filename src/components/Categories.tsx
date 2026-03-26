@@ -1,68 +1,91 @@
 import { motion } from 'motion/react';
-
-const categories = [
-  {
-    id: 'frescos',
-    name: 'Frutas e Legumes',
-    desc: 'Tudo o que precisa para saladas, sopas e sobremesas saudáveis.',
-    items: ['Frutas da época', 'Legumes frescos', 'Verduras para a sopa', 'Ervas aromáticas'],
-    image: 'https://images.unsplash.com/photo-1610832958506-aa56368176cf?q=80&w=1000&auto=format&fit=crop',
-    color: 'bg-emerald-100 text-emerald-800'
-  },
-  {
-    id: 'talho',
-    name: 'Talho e Charcutaria',
-    desc: 'Carne fresca e de confiança para os seus cozinhados do dia a dia.',
-    items: ['Carne de vaca e porco', 'Frango e peru', 'Enchidos e fumados', 'Preparados de carne'],
-    image: 'https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?q=80&w=1000&auto=format&fit=crop',
-    color: 'bg-red-100 text-red-800'
-  },
-  {
-    id: 'padaria',
-    name: 'Padaria e Pastelaria',
-    desc: 'Pão sempre fresco e doces para acompanhar o seu café.',
-    items: ['Pão quente (várias qualidades)', 'Bolas de Berlim e natas', 'Bolos secos e biscoitos', 'Pão de forma e fatiado'],
-    image: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=1000&auto=format&fit=crop',
-    color: 'bg-amber-100 text-amber-800'
-  },
-  {
-    id: 'mercearia',
-    name: 'Mercearia',
-    desc: 'Os ingredientes básicos que não podem faltar na sua despensa.',
-    items: ['Arroz, massa e feijão', 'Azeite, óleo e vinagre', 'Enlatados e conservas', 'Leite, queijo e manteiga'],
-    image: 'https://images.unsplash.com/photo-1583258292688-d0213dc5a3a8?q=80&w=1000&auto=format&fit=crop',
-    color: 'bg-orange-100 text-orange-800'
-  },
-  {
-    id: 'bebidas',
-    name: 'Bebidas',
-    desc: 'Para refrescar, acompanhar a refeição ou celebrar.',
-    items: ['Água mineral (com e sem gás)', 'Sumos naturais e néctares', 'Refrigerantes variados', 'Vinhos brancos, tintos e verdes'],
-    image: 'https://images.unsplash.com/photo-1582106245687-cbb466a9f07f?q=80&w=1000&auto=format&fit=crop',
-    color: 'bg-purple-100 text-purple-800'
-  },
-  {
-    id: 'higiene',
-    name: 'Higiene e Limpeza',
-    desc: 'Tudo para cuidar de si e deixar a casa a brilhar.',
-    items: ['Gel de banho e champô', 'Pasta de dentes e sabonetes', 'Detergentes para a roupa', 'Lixívia e lava-tudo'],
-    image: 'https://images.unsplash.com/photo-1556228578-0d85b1a4d571?q=80&w=1000&auto=format&fit=crop',
-    color: 'bg-blue-100 text-blue-800'
-  }
-];
+import { useTranslation } from 'react-i18next';
+import { Info, Phone } from 'lucide-react';
 
 export default function Categories() {
+  const { t } = useTranslation();
+
+  const categories = [
+    {
+      id: 'frescos',
+      name: t('categories.frescos.name'),
+      desc: t('categories.frescos.desc'),
+      items: t('categories.frescos.items', { returnObjects: true }) as string[],
+      image: 'https://images.unsplash.com/photo-1610832958506-aa56368176cf?q=80&w=1000&auto=format&fit=crop',
+      color: 'bg-emerald-100 text-emerald-800'
+    },
+    {
+      id: 'talho',
+      name: t('categories.talho.name'),
+      desc: t('categories.talho.desc'),
+      items: t('categories.talho.items', { returnObjects: true }) as string[],
+      image: 'https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?q=80&w=1000&auto=format&fit=crop',
+      color: 'bg-red-100 text-red-800'
+    },
+    {
+      id: 'padaria',
+      name: t('categories.padaria.name'),
+      desc: t('categories.padaria.desc'),
+      items: t('categories.padaria.items', { returnObjects: true }) as string[],
+      image: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=1000&auto=format&fit=crop',
+      color: 'bg-amber-100 text-amber-800'
+    },
+    {
+      id: 'mercearia',
+      name: t('categories.mercearia.name'),
+      desc: t('categories.mercearia.desc'),
+      items: t('categories.mercearia.items', { returnObjects: true }) as string[],
+      image: 'https://images.unsplash.com/photo-1583258292688-d0213dc5a3a8?q=80&w=1000&auto=format&fit=crop',
+      color: 'bg-orange-100 text-orange-800'
+    },
+    {
+      id: 'bebidas',
+      name: t('categories.bebidas.name'),
+      desc: t('categories.bebidas.desc'),
+      items: t('categories.bebidas.items', { returnObjects: true }) as string[],
+      image: 'https://images.unsplash.com/photo-1582106245687-cbb466a9f07f?q=80&w=1000&auto=format&fit=crop',
+      color: 'bg-purple-100 text-purple-800'
+    },
+    {
+      id: 'higiene',
+      name: t('categories.higiene.name'),
+      desc: t('categories.higiene.desc'),
+      items: t('categories.higiene.items', { returnObjects: true }) as string[],
+      image: 'https://images.unsplash.com/photo-1556228578-0d85b1a4d571?q=80&w=1000&auto=format&fit=crop',
+      color: 'bg-blue-100 text-blue-800'
+    }
+  ];
+
   return (
     <section id="produtos" className="py-32 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-brand-green font-semibold tracking-wider uppercase text-sm mb-3">Nossos Produtos</h2>
-          <h3 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-gray-900 mb-4">
-            Qualidade e Variedade
-          </h3>
-          <p className="text-gray-600 text-xl">
-            Selecionamos os melhores produtos para a sua mesa. Descubra as nossas secções e encontre tudo o que precisa.
-          </p>
+        <div className="text-center max-w-3xl mx-auto mb-20">
+          <motion.h2 
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-brand-green font-semibold tracking-[0.3em] uppercase text-xs mb-4"
+          >
+            {t('categories.badge')}
+          </motion.h2>
+          <motion.h3 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="text-5xl md:text-6xl lg:text-7xl font-serif font-bold text-gray-900 mb-6"
+          >
+            {t('categories.title')}
+          </motion.h3>
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="text-gray-600 text-xl font-light leading-relaxed"
+          >
+            {t('categories.subtitle')}
+          </motion.p>
         </div>
 
         <motion.div 

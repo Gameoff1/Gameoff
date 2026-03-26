@@ -1,37 +1,45 @@
 import { motion } from 'motion/react';
-
-const commitments = [
-  {
-    title: 'Frescura Diária',
-    desc: 'Frutas, legumes e pão quente que chegam todos os dias, selecionados para garantir o máximo sabor e nutrição na sua mesa.',
-    image: 'https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=1000&auto=format&fit=crop'
-  },
-  {
-    title: 'Produtos Regionais',
-    desc: 'Apoiamos a produção local, trazendo até si os melhores queijos, enchidos e sabores tradicionais da região da Serra da Estrela.',
-    image: 'https://images.unsplash.com/photo-1608897013039-887f214b985c?q=80&w=1000&auto=format&fit=crop'
-  },
-  {
-    title: 'Comunidade',
-    desc: 'Mais do que clientes, servimos vizinhos. O nosso atendimento é feito com um sorriso, proximidade e dedicação total.',
-    image: 'https://images.unsplash.com/photo-1604719312566-8912e9227c6a?q=80&w=1000&auto=format&fit=crop'
-  }
-];
+import { useTranslation, Trans } from 'react-i18next';
 
 export default function Features() {
+  const { t } = useTranslation();
+
+  const commitments = [
+    {
+      title: t('features.f1.title'),
+      desc: t('features.f1.desc'),
+      image: 'https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=1000&auto=format&fit=crop'
+    },
+    {
+      title: t('features.f2.title'),
+      desc: t('features.f2.desc'),
+      image: 'https://images.unsplash.com/photo-1452195100486-9cc805987862?q=80&w=1000&auto=format&fit=crop'
+    },
+    {
+      title: t('features.f3.title'),
+      desc: t('features.f3.desc'),
+      image: 'https://images.unsplash.com/photo-1604719312566-8912e9227c6a?q=80&w=1000&auto=format&fit=crop'
+    }
+  ];
+
   return (
     <section className="py-32 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row gap-8 md:gap-16 items-end mb-16">
           <div className="md:w-1/2">
-            <h2 className="text-brand-green font-semibold tracking-wider uppercase text-sm mb-3">O Nosso Compromisso</h2>
+            <h2 className="text-brand-green font-semibold tracking-wider uppercase text-sm mb-3 flex items-center gap-2">
+              <span className="w-8 h-px bg-brand-green/30"></span>
+              {t('features.badge')}
+            </h2>
             <h3 className="text-5xl md:text-6xl lg:text-7xl font-serif font-bold text-gray-900 leading-tight">
-              O melhor para a sua <span className="italic text-brand-green">casa</span>
+              <Trans i18nKey="features.title">
+                O melhor para a sua <span className="italic text-brand-green">casa</span>
+              </Trans>
             </h3>
           </div>
           <div className="md:w-1/2 pb-2">
             <p className="text-gray-600 text-xl leading-relaxed">
-              Não somos apenas um local de passagem. Somos o ponto de encontro entre os melhores produtos e a sua família. Descubra o que nos torna únicos em Gouveia.
+              {t('features.subtitle')}
             </p>
           </div>
         </div>

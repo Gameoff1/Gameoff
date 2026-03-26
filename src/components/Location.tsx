@@ -1,22 +1,29 @@
 import { motion } from 'motion/react';
 import { MapPin, Clock, Phone, Mail, Instagram, Facebook, Youtube } from 'lucide-react';
+import { useTranslation, Trans } from 'react-i18next';
 
 export default function Location() {
+  const { t } = useTranslation();
   const currentDay = new Date().getDay(); // 0 is Sunday, 1 is Monday, etc.
   
   const weekDays = [
-    { index: 1, name: 'Segunda-feira', hours: '09:00 – 20:00' },
-    { index: 2, name: 'Terça-feira', hours: '09:00 – 20:00' },
-    { index: 3, name: 'Quarta-feira', hours: '09:00 – 20:00' },
-    { index: 4, name: 'Quinta-feira', hours: '09:00 – 20:00' },
-    { index: 5, name: 'Sexta-feira', hours: '09:00 – 20:00' },
-    { index: 6, name: 'Sábado', hours: '09:00 – 20:00' },
-    { index: 0, name: 'Domingo', hours: '09:00 – 20:00' },
+    { index: 1, name: t('location.hours.days.monday'), hours: '09:00 – 20:00' },
+    { index: 2, name: t('location.hours.days.tuesday'), hours: '09:00 – 20:00' },
+    { index: 3, name: t('location.hours.days.wednesday'), hours: '09:00 – 20:00' },
+    { index: 4, name: t('location.hours.days.thursday'), hours: '09:00 – 20:00' },
+    { index: 5, name: t('location.hours.days.friday'), hours: '09:00 – 20:00' },
+    { index: 6, name: t('location.hours.days.saturday'), hours: '09:00 – 20:00' },
+    { index: 0, name: t('location.hours.days.sunday'), hours: '09:00 – 20:00' },
   ];
 
   return (
-    <section id="localizacao" className="py-32 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="localizacao" className="py-32 bg-gray-50 relative overflow-hidden">
+      {/* Subtle Excellence Watermark */}
+      <div className="absolute -right-20 top-1/2 -translate-y-1/2 text-[20vw] font-serif font-bold text-gray-200/20 select-none pointer-events-none rotate-90 uppercase tracking-widest">
+        Excellence
+      </div>
+      
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 bg-white rounded-3xl overflow-hidden shadow-xl border border-gray-100">
           
           {/* Info Side */}
@@ -33,9 +40,9 @@ export default function Location() {
                 }
               }}
             >
-              <motion.span variants={{ hidden: { opacity: 0, x: -20 }, visible: { opacity: 1, x: 0 } }} className="text-brand-green font-semibold tracking-wider uppercase text-sm mb-3 block">Visite-nos</motion.span>
+              <motion.span variants={{ hidden: { opacity: 0, x: -20 }, visible: { opacity: 1, x: 0 } }} className="text-brand-green font-semibold tracking-wider uppercase text-sm mb-3 block">{t('location.badge')}</motion.span>
               <motion.h2 variants={{ hidden: { opacity: 0, x: -20 }, visible: { opacity: 1, x: 0 } }} className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-gray-900 mb-10">
-                Estamos à sua espera
+                {t('location.title')}
               </motion.h2>
 
               <div className="space-y-8">
@@ -44,8 +51,12 @@ export default function Location() {
                     <MapPin size={28} />
                   </div>
                   <div>
-                    <h4 className="text-xl font-bold text-gray-900 mb-2">Morada</h4>
-                    <p className="text-gray-600 text-lg">SuperShop António Pessoa Lopes, LDA.<br/>Zona Industrial De Gouveia<br/>6920-650 Gouveia</p>
+                    <h4 className="text-xl font-bold text-gray-900 mb-2">{t('location.address.label')}</h4>
+                    <p className="text-gray-600 text-lg">
+                      <Trans i18nKey="location.address.value">
+                        SuperShop António Pessoa Lopes, LDA.<br/>Zona Industrial De Gouveia<br/>6920-650 Gouveia
+                      </Trans>
+                    </p>
                   </div>
                 </motion.div>
 
@@ -54,7 +65,7 @@ export default function Location() {
                     <Clock size={28} />
                   </div>
                   <div className="w-full">
-                    <h4 className="text-xl font-bold text-gray-900 mb-3">Horário de Funcionamento</h4>
+                    <h4 className="text-xl font-bold text-gray-900 mb-3">{t('location.hours.label')}</h4>
                     <ul className="space-y-2 w-full max-w-sm">
                       {weekDays.map((day) => {
                         const isToday = currentDay === day.index;
@@ -76,12 +87,12 @@ export default function Location() {
                   </div>
                 </motion.div>
 
-                <motion.div variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }} className="flex items-start gap-5 group">
+                <motion.div variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }} className="flex items-start gap-5 group scroll-mt-32">
                   <div className="bg-blue-50 p-4 rounded-2xl text-blue-600 shrink-0 group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300">
                     <Phone size={28} />
                   </div>
                   <div>
-                    <h4 className="text-xl font-bold text-gray-900 mb-2">Telefone</h4>
+                    <h4 className="text-xl font-bold text-gray-900 mb-2">{t('location.phone')}</h4>
                     <p className="text-gray-600 text-lg font-medium">238 492 605</p>
                   </div>
                 </motion.div>
@@ -91,7 +102,7 @@ export default function Location() {
                     <Mail size={28} />
                   </div>
                   <div>
-                    <h4 className="text-xl font-bold text-gray-900 mb-2">Email</h4>
+                    <h4 className="text-xl font-bold text-gray-900 mb-2">{t('location.email')}</h4>
                     <p className="text-gray-600 text-lg font-medium">
                       <a href="mailto:geral@supershopgouveia.pt" className="hover:text-brand-green transition-colors">
                         geral@supershopgouveia.pt
@@ -101,7 +112,7 @@ export default function Location() {
                 </motion.div>
 
                 <motion.div variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }} className="pt-4 border-t border-gray-100">
-                  <h4 className="text-lg font-bold text-gray-900 mb-4">Siga-nos nas Redes Sociais</h4>
+                  <h4 className="text-lg font-bold text-gray-900 mb-4">{t('location.social')}</h4>
                   <div className="flex items-center gap-4">
                     <a href="#" className="w-12 h-12 rounded-full bg-gray-50 flex items-center justify-center text-gray-600 hover:bg-brand-green hover:text-white transition-colors shadow-sm hover:shadow-md hover:-translate-y-1" aria-label="Instagram">
                       <Instagram size={24} />
@@ -137,7 +148,7 @@ export default function Location() {
               allowFullScreen={false} 
               loading="lazy" 
               referrerPolicy="no-referrer-when-downgrade"
-              title="Mapa da localização do Super Shop Gouveia"
+              title={t('location.mapTitle')}
             ></iframe>
           </motion.div>
 

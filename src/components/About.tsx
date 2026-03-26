@@ -1,10 +1,16 @@
 import { motion } from 'motion/react';
 import { Leaf, Users } from 'lucide-react';
+import { useTranslation, Trans } from 'react-i18next';
 
 export default function About() {
+  const { t } = useTranslation();
+
   return (
-    <section id="sobre" className="py-32 bg-stone-50 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="sobre" className="py-32 bg-stone-50 overflow-hidden relative">
+      {/* Decorative background pattern */}
+      <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: 'radial-gradient(#059669 1px, transparent 1px)', backgroundSize: '32px 32px' }}></div>
+      
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         <motion.div 
           initial={{ opacity: 0, y: 40 }}
@@ -27,18 +33,16 @@ export default function About() {
           
           {/* Text Side */}
           <div className="lg:w-7/12 p-8 sm:p-12 lg:p-16 flex flex-col justify-center">
-            <span className="text-brand-green font-semibold tracking-wider uppercase text-sm mb-3 block">Sobre Nós</span>
+            <span className="text-brand-green font-semibold tracking-wider uppercase text-sm mb-3 block">{t('about.badge')}</span>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-gray-900 mb-8 leading-tight">
-              Um supermercado com <span className="text-brand-green italic">alma local</span>
+              <Trans i18nKey="about.title">
+                Um supermercado com <span className="text-brand-green italic">alma local</span>
+              </Trans>
             </h2>
             
             <div className="space-y-6 text-xl text-gray-600 mb-10 leading-relaxed">
-              <p>
-                A Super Shop é mais do que um supermercado. Somos um negócio local, profundamente enraizado na comunidade de Gouveia, dedicado a trazer os melhores produtos para a sua mesa.
-              </p>
-              <p>
-                Acreditamos que a qualidade não tem de ser um luxo. Por isso, trabalhamos diariamente para garantir a frescura dos nossos produtos, desde a fruta da época até à carne mais tenra. Conhecemos os nossos clientes pelo nome e procuramos sempre o melhor para as suas famílias.
-              </p>
+              <p>{t('about.p1')}</p>
+              <p>{t('about.p2')}</p>
             </div>
             
             {/* Features inside the about card to reinforce the connection */}
@@ -48,8 +52,8 @@ export default function About() {
                   <Leaf size={28} />
                 </div>
                 <div>
-                  <h4 className="font-bold text-gray-900 text-xl">Foco na Frescura</h4>
-                  <p className="text-base text-gray-500 mt-1">Produtos selecionados diariamente para a sua mesa.</p>
+                  <h4 className="font-bold text-gray-900 text-xl">{t('about.f1.title')}</h4>
+                  <p className="text-base text-gray-500 mt-1">{t('about.f1.desc')}</p>
                 </div>
               </div>
               <div className="flex gap-4 items-start">
@@ -57,8 +61,8 @@ export default function About() {
                   <Users size={28} />
                 </div>
                 <div>
-                  <h4 className="font-bold text-gray-900 text-xl">Atendimento Próximo</h4>
-                  <p className="text-base text-gray-500 mt-1">Conhecemos e cuidamos dos nossos clientes.</p>
+                  <h4 className="font-bold text-gray-900 text-xl">{t('about.f2.title')}</h4>
+                  <p className="text-base text-gray-500 mt-1">{t('about.f2.desc')}</p>
                 </div>
               </div>
             </div>

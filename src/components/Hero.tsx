@@ -1,7 +1,10 @@
-import { motion } from 'motion/react';
+import { motion, Variants } from 'motion/react';
+import { useTranslation, Trans } from 'react-i18next';
 
 export default function Hero() {
-  const containerVariants = {
+  const { t } = useTranslation();
+
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -12,7 +15,7 @@ export default function Hero() {
     }
   };
 
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: { opacity: 0, y: 30 },
     visible: { 
       opacity: 1, 
@@ -22,7 +25,7 @@ export default function Hero() {
   };
 
   return (
-    <div className="relative min-h-screen flex items-center pt-24 overflow-hidden">
+    <div className="relative min-h-screen flex items-center pt-32 pb-6 overflow-hidden">
       {/* Background Image with Overlay */}
       <motion.div 
         initial={{ scale: 1.1 }}
@@ -48,30 +51,48 @@ export default function Hero() {
             animate="visible"
           >
             <motion.h1 variants={itemVariants} className="text-5xl md:text-7xl lg:text-8xl font-serif font-bold text-white leading-tight mb-6">
-              Tradição e <span className="text-brand-green">Qualidade</span> em Gouveia
+              <Trans i18nKey="hero.title">
+                Tradição e <span className="text-brand-green">Qualidade</span> em Gouveia
+              </Trans>
             </motion.h1>
             
             <motion.p variants={itemVariants} className="text-xl md:text-2xl text-gray-200 mb-10 font-light leading-relaxed">
-              Descubra os melhores produtos frescos e regionais com um atendimento que o faz sentir em casa. Venha visitar-nos!
+              {t('hero.subtitle')}
             </motion.p>
             
-            <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4">
+            <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4 mb-12">
               <a 
                 href="#localizacao"
-                className="inline-flex justify-center items-center px-8 py-4 text-lg font-semibold rounded-full text-white bg-brand-green hover:bg-brand-green-dark transition-all duration-300 shadow-lg hover:shadow-brand-green/30 hover:-translate-y-1"
+                className="inline-flex justify-center items-center px-10 py-4 text-lg font-bold rounded-full text-white bg-brand-green hover:bg-brand-green-dark transition-all duration-300 shadow-lg hover:shadow-brand-green/30 hover:-translate-y-1 active:scale-95"
               >
-                Visitar Loja
+                {t('nav.visitStore')}
               </a>
               <a 
                 href="#produtos"
-                className="inline-flex justify-center items-center px-8 py-4 text-lg font-semibold rounded-full text-white bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 transition-all duration-300 hover:-translate-y-1"
+                className="inline-flex justify-center items-center px-10 py-4 text-lg font-bold rounded-full text-white bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 transition-all duration-300 hover:-translate-y-1 active:scale-95"
               >
-                Ver Produtos
+                {t('nav.viewProducts')}
               </a>
             </motion.div>
           </motion.div>
         </div>
       </div>
+
+      {/* Scroll Indicator */}
+      <motion.div 
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 1.5, duration: 1, repeat: Infinity, repeatType: "reverse" }}
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 z-10 hidden md:block"
+      >
+        <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center p-1">
+          <motion.div 
+            animate={{ y: [0, 12, 0] }}
+            transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+            className="w-1.5 h-1.5 bg-white rounded-full"
+          />
+        </div>
+      </motion.div>
     </div>
   );
 }
